@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/yachtingdemo-q22er.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    margin-bottom: 100px;
+    padding-top: 40px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Avenir';
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+    position: relative; /* Needed for the black rectangle */
+
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 10px; /* Add padding to create space for the black rectangle */
+    position: relative; /* Needed for the black rectangle */
+    z-index: 1; /* Ensure the link text is above the black rectangle */
+
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: #000;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.1s;
+    z-index: -1; /* Place the black rectangle behind the text */
+}
+
+nav ul li a:hover {
+    color: #fff; /* Invert the text color to black */
+}
+
+nav ul li a:hover::before {
+    transform: scaleY(1);
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 20em; /* Adjust the font size as needed */
+    font-family: 'MyCustomFont'; /* Using a calligraphy-like font */
+    color: #000000;
+}
+
+footer {
+    color: #000000;
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%; /* Adjust based on header height */
+}
