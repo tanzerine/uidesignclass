@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight+300;
 
-    const text = "Works";
+    const text = "(Works)";
     const pixelSize = 10;
 
     // Load custom font
